@@ -11,6 +11,7 @@ class Ataque:
         self.prescision = prescision
         self.poder_base = poder_base
 
+
 class Programon:
 
     def __init__(self, id, nombre, movimientos, tipo, vida, velocidad, ataque, ataque_especial, defensa,
@@ -46,18 +47,24 @@ class Programon:
 
         hp = (((self.vidabase + random.randint(0,15))*2 + (m.sqrt(random.randint(0,65535)))/4)*self.nivel)/100 + \
              self.nivel + 10
+
         self.vida = hp
         self.vidatotal = hp
+
         otrohpataque = (((self.ataque + random.randint(0, 15)) * 2 + (
-        m.sqrt(random.randint(0, 65535))) / 4) * self.nivel) / 100 + 5
+            m.sqrt(random.randint(0, 65535))) / 4) * self.nivel) / 100 + 5
+
         otrohpataqueespecial = (((self.ataque_especial + random.randint(0, 15)) * 2 + (
-        m.sqrt(random.randint(0, 65535))) / 4) * self.nivel) / 100 + 5
+            m.sqrt(random.randint(0, 65535))) / 4) * self.nivel) / 100 + 5
+
         otrohpdefensa = (((self.defensa + random.randint(0, 15)) * 2 + (
-        m.sqrt(random.randint(0, 65535))) / 4) * self.nivel) / 100 + 5
+            m.sqrt(random.randint(0, 65535))) / 4) * self.nivel) / 100 + 5
+
         otrohpdefensaespecial = (((self.defensa_especial + random.randint(0, 15)) * 2 + (
-        m.sqrt(random.randint(0, 65535))) / 4) * self.nivel) / 100 + 5
+            m.sqrt(random.randint(0, 65535))) / 4) * self.nivel) / 100 + 5
+
         otrohpvelocidad = (((self.velocidad + random.randint(0, 15)) * 2 + (
-        m.sqrt(random.randint(0, 65535))) / 4) * self.nivel) / 100 + 5
+            m.sqrt(random.randint(0, 65535))) / 4) * self.nivel) / 100 + 5
 
         self.ataque = otrohpataque
         self.ataque_especial = otrohpataqueespecial
@@ -92,10 +99,9 @@ class Programon:
 
 class Prograbola:
 
-## Puede que sea solo estado revisar esto
-
     def __init__(self):
         self.estado = None
+
 
 class Progradex:
 
@@ -103,10 +109,12 @@ class Progradex:
         self.programones_vistos = []
         self.programones_capturados = []
 
+
 class PcDeBastian:
 
     def __init__(self):
         self.datos_pc = []
+
 
 class Entrenador:
 
@@ -114,6 +122,7 @@ class Entrenador:
         self.nombre = nombre_entrenador
         self.lista_programones = programones
         self.vencido = False
+
 
 class Jugador(Entrenador):
 
@@ -132,17 +141,18 @@ class Jugador(Entrenador):
         self.registro_batalla = []
 
 
-
 class TiendaDePrograbolas:
 
     def __init__(self):
         pass
+
 
 class CentroDeProgramon:
 
     def __init__(self):
 
         self.pc = PcDeBastian
+
 
 class Gimnasio:
 
@@ -152,6 +162,7 @@ class Gimnasio:
         self.lider = lider
         self.entrenadores = entrenadores
 
+
 class Ciudad:
 
     def __init__(self, nombre, id, gimnasio):
@@ -160,6 +171,7 @@ class Ciudad:
         self.tienda_de_progrbolas = TiendaDePrograbolas()
         self.centro_programon = CentroDeProgramon()
         self.gimnasio = gimnasio
+
 
 class Route:
 

@@ -239,7 +239,7 @@ CinnabarIsland = None
 
 lista_de_todas_las_ciudades.append(PalletTown)
 
-for p in range (1,10):
+for p in range(1, 10):
     arg1 = None
     arg2 = None
     arg3 = None
