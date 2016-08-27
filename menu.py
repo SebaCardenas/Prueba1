@@ -1215,14 +1215,27 @@ class Menu:
 
             print("No puedes quedarte sin Programones.")
 
-        T1p.Programon_actual_jugador = T1p.Jugador_actual.lista_programone[0]
+            while True:
+
+                self.mostrar_pc_de_bastian()
+                eleccion = input("Ingrese Opcion: ")
+                accion = self.pc_de_bastian.get(eleccion)
+
+                if accion:
+                    accion()  # aqui se llama a la funcion
+
+                else:
+
+                    print("{0} no es una opcion valida".format(eleccion))
+
+        T1p.Programon_actual_jugador = T1p.Jugador_actual.lista_programones[0]
 
     def sacar_programon(self):
 
         variable = len(T1p.Jugador_actual.lista_programones)
         variable2 = len(T1p.Jugador_actual.pcbastian.datos_pc)
 
-        if variable <= 6:
+        if variable <= 6 and variable2 > 0 :
             while True:
 
                 for gh in range(0, variable2):
@@ -1240,9 +1253,9 @@ class Menu:
 
         else:
 
-            print("Tu Canasta de Programones, ya esta llena.")
+            print("Tu Canasta de Programones, ya esta llena. o no hay Programones en pc")
 
-        T1p.Programon_actual_jugador = T1p.Jugador_actual.lista_programone[0]
+        T1p.Programon_actual_jugador = T1p.Jugador_actual.lista_programones[0]
 
     def batallar_entrenadoress(self):
 
